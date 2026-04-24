@@ -28,6 +28,12 @@ stage('Install sonarqube cli') {
         sh '. /etc/profile.d/sonar-scanner.sh'
          }
     }
+stage('Analyzing Code Quality') {
+steps {
+// Step to analyze code quality with SonarQube
+sh '/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=amansonarqube_myfirstproject -Dsonar.organization=amansonarqube -Dsonar.qualitygate.wait=false -Dsonar.qualitygate.timeout=300 -Dsonar.sources=src/main/java/ -Dsonar.java.binaries=target/classes -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=2c2de432138172f5670859e96f8a501baaf12df1'
+}
+}
  }
 
 }
