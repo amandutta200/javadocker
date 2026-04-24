@@ -16,8 +16,6 @@ stages {
   archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
      }
   }
-}
-}
 stage('Install sonarqube cli') {
         steps {
 // Step to install SonarQube CLI
@@ -30,3 +28,8 @@ stage('Install sonarqube cli') {
         sh '. /etc/profile.d/sonar-scanner.sh'
          }
     }
+ }
+
+}
+}
+}
